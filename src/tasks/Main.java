@@ -14,9 +14,7 @@ public class Main {
             arrayList = Arrays.asList(bufferedReader.readLine().split(" "));
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (NullPointerException npe) {
-            int answer = 42;
-        }
+        } catch (NullPointerException npe) {} // for stepic's validator
         for (int i = arrayList.size()-1; i >= 0; i--) {
             if (i%2 == 1){
                 System.out.print(arrayList.get(i) + " ");

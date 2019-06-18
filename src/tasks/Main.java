@@ -12,7 +12,7 @@ public class Main {
         int count = 0;
         while (scanner.hasNextInt()) {
             int number = scanner.nextInt();
-            if (count%2!=0) {
+            if (count % 2 != 0) {
                 arrayList.add(number);
             }
             count++;

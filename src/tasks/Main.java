@@ -1,25 +1,32 @@
 package tasks;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> arrayList = new ArrayList<>();
+        Stack<Integer> stack = new Stack<>();
         Scanner scanner = new Scanner(System.in);
+        int number;
         int count = 0;
-        while (scanner.hasNextInt()) {
-            int number = scanner.nextInt();
-            if (count % 2 != 0) {
-                arrayList.add(number);
+        boolean flag = true;
+        while (flag) {
+            if (scanner.hasNextInt()) {
+                number = scanner.nextInt();
+                if (count % 2 != 0) {
+                    stack.push(number);
+                }
+                count++;
+            } else {
+                if (!stack.empty()) {
+                    System.out.print(stack.pop());
+                }
+                if (!stack.empty()) {
+                    System.out.print(" ");
+                } else {
+                    flag = false;
+                }
             }
-            count++;
-        }
-        Collections.reverse(arrayList);
-        for (Integer value : arrayList) {
-            System.out.print(value + " ");
         }
     }
 }
